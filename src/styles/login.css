@@ -1,23 +1,63 @@
 .logo {
   width: 100px;
   height: 100px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 .container {
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.center {
-  text-align: center;
+  padding: 70px 0;
 }
 
 .content {
-  border-width: 2px;
-  border-color: black;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 8px;
+  border-color: #8e8e8e;
+  margin: auto;
+  width: 33%;
+}
+
+.header {
+  background-color: #f0f0f0;
+  padding: 8px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-color: #8e8e8e;
+}
+
+.subtitle {
+  color: #8e8e8e;
+}
+
+.title {
+  color: #609bbf;
+}
+.btn {
+  width: 100%;
+  background-color: #609bbf;
+  color: white;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 4px;
+}
+
+form {
+  padding: 8px;
+}
+
+select {
+  width: 100%;
+  padding: 12px 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 8px;
 }
