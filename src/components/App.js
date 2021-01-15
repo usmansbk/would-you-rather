@@ -1,5 +1,10 @@
+import Login from "./Login";
 function App() {
-  return <div>Would you rather</div>;
+  return (
+    <div>
+      <Login />
+    </div>
+  );
 }
 
 export default App;
