@@ -1,11 +1,17 @@
 import logo from "../assets/hands.png";
 import "../styles/login.css";
+import * as API from "../api/_DATA";
+import { useEffect, useState } from "react";
 
 export default function Login() {
+  const [options, setOptions] = useState([]);
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log("submit");
   };
+
+  useEffect(() => {
+    API._getUsers().then((users) => setOptions(users));
+  }, []);
 
   return (
     <div className="container">
@@ -19,7 +25,11 @@ export default function Login() {
         <h2 className="title">Sign In</h2>
         <form onSubmit={onSubmit}>
           <select>
-            <option value="default">Usman</option>
+            {Object.keys(options).map((id) => (
+              <option value={id} key={id}>
+                {options[id].name}
+              </option>
+            ))}
           </select>
           <input type="submit" value="Sign In" className="btn" />
         </form>
