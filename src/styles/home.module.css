@@ -1,0 +1,19 @@
+.tabs {
+  margin: 20px;
+  list-style-type: none;
+  overflow: hidden;
+  background-color: white;
+  text-align: center;
+}
+
+.tab {
+  margin: 16px;
+  text-align: center;
+  padding: 20px;
+  text-decoration: none;
+  background-color: #333;
+  color: white;
+}
+a:hover:not(.active) {
+  background-color: #111;
+}

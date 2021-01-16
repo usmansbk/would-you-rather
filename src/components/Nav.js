@@ -1,4 +1,4 @@
-import "../styles/nav.css";
+import styles from "../styles/nav.module.css";
 
 export default function Nav() {
   return (
@@ -13,17 +13,17 @@ export default function Nav() {
         <li>
           <a href="#home">Leader Board</a>
         </li>
-        <li className="right-item">
+        <li className={styles["right-item"]}>
           <a href="#home">Logout</a>
         </li>
-        <li className="right-item">
+        <li className={styles["right-item"]}>
           <span>Usman Suleiman</span>
         </li>
-        <li className="right-item">
+        <li className={styles["right-item"]}>
           <img
             src="https://i.pravatar.cc/300"
             alt="avatar"
-            className="avatar"
+            className={styles.avatar}
           />
         </li>
       </ul>

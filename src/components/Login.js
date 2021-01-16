@@ -1,5 +1,5 @@
 import logo from "../assets/logo.png";
-import "../styles/login.css";
+import styles from "../styles/login.module.css";
 import * as API from "../api/_DATA";
 import { useEffect, useState } from "react";
 
@@ -14,15 +14,15 @@ export default function Login() {
   }, []);
 
   return (
-    <div className="container">
-      <div className="content">
-        <div className="header">
-          <h3 className="title">Welcome to the Would You Rather App!</h3>
-          <h5 className="subtitle">Please sign in to continue</h5>
+    <div className={styles.container}>
+      <div className={styles.content}>
+        <div className={styles.header}>
+          <h3 className={styles.title}>Welcome to the Would You Rather App!</h3>
+          <h5 className={styles.subtitle}>Please sign in to continue</h5>
         </div>
 
-        <img alt="logo" src={logo} className="logo" />
-        <h2 className="title">Sign In</h2>
+        <img alt="logo" src={logo} className={styles.logo} />
+        <h2 className={styles.title}>Sign In</h2>
         <form onSubmit={onSubmit}>
           <select>
             {Object.keys(options).map((id) => (
@@ -31,7 +31,7 @@ export default function Login() {
               </option>
             ))}
           </select>
-          <input type="submit" value="Sign In" className="btn" />
+          <input type="submit" value="Sign In" className={styles.btn} />
         </form>
       </div>
     </div>
