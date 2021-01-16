@@ -1,4 +1,4 @@
-import logo from "../assets/hands.png";
+import logo from "../assets/logo.png";
 import "../styles/login.css";
 import * as API from "../api/_DATA";
 import { useEffect, useState } from "react";
