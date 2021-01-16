@@ -14,15 +14,8 @@ li {
   float: right;
 }
 
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-li span {
+li a,
+span {
   display: block;
   color: white;
   text-align: center;
