@@ -23,8 +23,8 @@ export default function Login() {
 
         <img alt="logo" src={logo} className={styles.logo} />
         <h2 className={styles.title}>Sign In</h2>
-        <form onSubmit={onSubmit}>
-          <select>
+        <form onSubmit={onSubmit} className={styles.form}>
+          <select className={styles.select}>
             {Object.keys(options).map((id) => (
               <option value={id} key={id}>
                 {options[id].name}
