@@ -1,23 +1,32 @@
+import clsx from "clsx";
 import styles from "../styles/nav.module.css";
 
 export default function Nav() {
   return (
     <nav>
-      <ul>
-        <li>
-          <a href="#home">Home</a>
+      <ul className={styles.list}>
+        <li className={styles.item}>
+          <a href="#home" className={styles.text}>
+            Home
+          </a>
         </li>
-        <li>
-          <a href="#home">New Question</a>
+        <li className={styles.item}>
+          <a href="#home" className={styles.text}>
+            New Question
+          </a>
         </li>
-        <li>
-          <a href="#home">Leader Board</a>
+        <li className={styles.item}>
+          <a href="#home" className={styles.text}>
+            Leader Board
+          </a>
+        </li>
+        <li className={clsx(styles.item, styles["right-item"])}>
+          <a href="#home" className={styles.text}>
+            Logout
+          </a>
         </li>
         <li className={styles["right-item"]}>
-          <a href="#home">Logout</a>
-        </li>
-        <li className={styles["right-item"]}>
-          <span>Usman Suleiman</span>
+          <span className={styles.text}>Usman Suleiman</span>
         </li>
         <li className={styles["right-item"]}>
           <img

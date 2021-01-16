@@ -1,4 +1,4 @@
-ul {
+.list {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -6,7 +6,7 @@ ul {
   background-color: #333;
 }
 
-li {
+.item {
   float: left;
 }
 
@@ -14,8 +14,7 @@ li {
   float: right;
 }
 
-li a,
-span {
+.text {
   display: block;
   color: white;
   text-align: center;

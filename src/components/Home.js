@@ -3,14 +3,16 @@ import styles from "../styles/home.module.css";
 export default function Home() {
   return (
     <div>
-      <div className={styles.tabs}>
-        <a className={styles.tab} href="#unanswered">
-          Unanswered Questions
-        </a>
-        <a className={styles.tab} href="#unanswered">
-          Answered Questions
-        </a>
-      </div>
+      <nav>
+        <ul>
+          <li>
+            <a href="#">Unanswered Questions</a>
+          </li>
+          <li>
+            <a href="#">Answered Questions</a>
+          </li>
+        </ul>
+      </nav>
     </div>
   );
 }
