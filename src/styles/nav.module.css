@@ -22,7 +22,7 @@
   text-decoration: none;
 }
 
-li a:hover:not(.active) {
+.item a:hover:not(.active) {
   background-color: #111;
 }
 
