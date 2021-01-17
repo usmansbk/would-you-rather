@@ -13,12 +13,13 @@
 }
 
 .link {
-  background-color: #545454;
+  background-color: #d3d3d3;
   text-decoration: none;
-  color: white;
+  color: #333;
   padding: 14px;
 }
 
 .active {
   background-color: #4caf50;
+  color: white;
 }
