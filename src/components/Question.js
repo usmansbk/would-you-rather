@@ -47,7 +47,7 @@ function Unanswered({ onAnswer }) {
 
 function Answered() {
   return (
-    <div className={styles.content}>
+    <>
       <h4>Added by Joao Gabriel Olivel</h4>
       <img
         src={"https://i.pravatar.cc/300"}
@@ -68,7 +68,7 @@ function Answered() {
           question="have your best friend find $500?"
         />
       </div>
-    </div>
+    </>
   );
 }
 

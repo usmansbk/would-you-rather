@@ -5,7 +5,7 @@ export default function NewQuestion() {
     e.preventDefault();
   };
   return (
-    <div className={styles.content}>
+    <>
       <h2>Create New Question</h2>
       <p>Complete the questions:</p>
 
@@ -24,6 +24,6 @@ export default function NewQuestion() {
         />
         <input className={styles.btn} type="submit" value="Submit" />
       </form>
-    </div>
+    </>
   );
 }
