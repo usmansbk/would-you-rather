@@ -3,6 +3,7 @@ import Login from "./Login";
 import Nav from "./Nav";
 import Home from "./Home";
 import FoF from "./FOF";
+import Question from "./Question";
 
 function App() {
   return (
@@ -14,6 +15,9 @@ function App() {
         </Route>
         <Route path="/login">
           <Login />
+        </Route>
+        <Route path="/questions/:id">
+          <Question />
         </Route>
         <Route path="*">
           <FoF />

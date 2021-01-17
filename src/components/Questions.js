@@ -4,7 +4,7 @@ import styles from "../styles/questions.module.css";
 export default function Questions() {
   return (
     <div>
-      <Link to="/questions/:id" className={styles.link}>
+      <Link to="/questions/1" className={styles.link}>
         <Question />
       </Link>
     </div>
