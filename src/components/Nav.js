@@ -39,9 +39,9 @@ export default function Nav() {
           </NavLink>
         </li>
         <li className={clsx(styles.item, styles["right-item"])}>
-          <a href="#logout" className={styles.link} onClick={handleLogout}>
+          <NavLink href="#logout" className={styles.link} to="/login">
             Logout
-          </a>
+          </NavLink>
         </li>
         <li className={styles["right-item"]}>
           <span className={styles.link}>Usman Suleiman</span>

@@ -14,15 +14,13 @@ export default function Login() {
   }, []);
 
   return (
-    <div>
-      <div className={styles.header}>
-        <h3 className={styles.title}>Welcome to the Would You Rather App!</h3>
-        <h5 className={styles.subtitle}>Please sign in to continue</h5>
-      </div>
+    <div className={styles.content}>
+      <h2>Welcome to the Would You RatherApp!</h2>
+      <p>Please sign in to continue</p>
 
       <img alt="logo" src={logo} className={styles.logo} />
       <h2 className={styles.title}>Sign In</h2>
-      <form onSubmit={onSubmit} className={styles.form}>
+      <form onSubmit={onSubmit}>
         <select className={styles.select}>
           {Object.keys(options).map((id) => (
             <option value={id} key={id}>
@@ -30,7 +28,7 @@ export default function Login() {
             </option>
           ))}
         </select>
-        <input type="submit" value="Sign In" className={styles.btn} />
+        <input className={styles.btn} type="submit" value="Submit" />
       </form>
     </div>
   );
