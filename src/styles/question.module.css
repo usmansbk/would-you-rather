@@ -37,3 +37,36 @@
 .label {
   margin-left: 10px;
 }
+
+.row {
+  display: flex;
+}
+
+.box {
+  width: 50%;
+  text-align: center;
+  margin: 10px;
+  padding: 14px;
+  border-radius: 5px;
+  border-style: solid;
+  border-color: #4a4a4a;
+}
+
+.question {
+  font-weight: 700;
+}
+
+.count {
+  color: #363636;
+}
+
+.voted {
+  color: #4caf50;
+  border-color: #4caf50;
+}
+
+.yourVote {
+  width: 56px;
+  height: 56px;
+  position: absolute;
+}
