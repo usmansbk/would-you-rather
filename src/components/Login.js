@@ -1,6 +1,6 @@
 import logo from "../assets/logo.png";
 import styles from "../styles/login.module.css";
-import * as API from "../api/_DATA";
+import * as API from "../api";
 import { useEffect, useState } from "react";
 
 export default function Login() {
