@@ -1,7 +1,7 @@
 import styles from "../styles/newquestion.module.css";
 
 export default function NewQuestion() {
-  const _onSubmit = (e) => {
+  const onSubmit = (e) => {
     e.preventDefault();
   };
   return (
@@ -10,7 +10,7 @@ export default function NewQuestion() {
       <p>Complete the questions:</p>
 
       <h4>Would you rather...</h4>
-      <form>
+      <form onSubmit={onSubmit}>
         <input
           className={styles.input}
           type="text"
@@ -22,12 +22,7 @@ export default function NewQuestion() {
           type="text"
           placeholder="Enter Option Two Text Here"
         />
-        <input
-          onClick={_onSubmit}
-          className={styles.btn}
-          type="submit"
-          value="Submit"
-        />
+        <input className={styles.btn} type="submit" value="Submit" />
       </form>
     </div>
   );
