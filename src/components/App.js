@@ -3,7 +3,7 @@ import Login from "./Login";
 import Nav from "./Nav";
 import Home from "./Home";
 import FoF from "./FOF";
-import Question from "./Question";
+import Poll from "./Poll";
 import NewQuestion from "./NewQuestion";
 import LeaderBoard from "./LeaderBoard";
 import styles from "../styles/app.module.css";
@@ -21,8 +21,8 @@ function App() {
             <Route path="/login">
               <Login />
             </Route>
-            <Route path="/questions/:id">
-              <Question />
+            <Route path="/questions/:question_id">
+              <Poll />
             </Route>
             <Route path="/add">
               <NewQuestion />
