@@ -1,0 +1,12 @@
+.container {
+  height: 98vh;
+  width: 100%;
+}
+
+.content {
+  padding-top: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

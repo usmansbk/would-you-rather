@@ -8,21 +8,6 @@
   margin-bottom: 40px;
 }
 
-.container {
-  height: 100%;
-  padding: 70px 0;
-}
-
-.content {
-  text-align: center;
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 8px;
-  border-color: #8e8e8e;
-  margin: auto;
-  width: 33%;
-}
-
 .header {
   background-color: #f0f0f0;
   padding: 8px;

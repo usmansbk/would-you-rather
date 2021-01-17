@@ -4,14 +4,10 @@ import styles from "../styles/question.module.css";
 
 export default function Question() {
   const [isAnswered, setAnswered] = useState(false);
-  return (
-    <div className={styles.container}>
-      {isAnswered ? (
-        <Answered />
-      ) : (
-        <Unanswered onAnswer={() => setAnswered(true)} />
-      )}
-    </div>
+  return isAnswered ? (
+    <Answered />
+  ) : (
+    <Unanswered onAnswer={() => setAnswered(true)} />
   );
 }
 
