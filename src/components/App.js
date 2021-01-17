@@ -4,6 +4,7 @@ import Nav from "./Nav";
 import Home from "./Home";
 import FoF from "./FOF";
 import Question from "./Question";
+import NewQuestion from "./NewQuestion";
 
 function App() {
   return (
@@ -18,6 +19,9 @@ function App() {
         </Route>
         <Route path="/questions/:id">
           <Question />
+        </Route>
+        <Route path="/add">
+          <NewQuestion />
         </Route>
         <Route path="*">
           <FoF />
