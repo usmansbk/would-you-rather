@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import { useState } from "react";
 import styles from "../styles/home.module.css";
+import Questions from "./Questions";
 
 const ANSWERED = "answered";
 const UNANSWERED = "unanswered";
@@ -41,6 +42,7 @@ export default function Home() {
             </li>
           </ul>
         </nav>
+        <Questions />
       </div>
     </div>
   );
