@@ -1,28 +1,45 @@
-import { NavLink as Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import clsx from "clsx";
 import styles from "../styles/nav.module.css";
 
 export default function Nav() {
+  const handleLogout = (e) => {
+    e.preventDefault();
+    console.log("logout");
+  };
   return (
     <nav>
       <ul className={styles.list}>
         <li className={styles.item}>
-          <Link className={styles.link} activeClassName={styles.active} to="/">
+          <NavLink
+            className={styles.link}
+            exact
+            activeClassName={styles.active}
+            to="/"
+          >
             Home
-          </Link>
+          </NavLink>
         </li>
         <li className={styles.item}>
-          <Link className={styles.link} to="/new">
+          <NavLink
+            className={styles.link}
+            to="/add"
+            activeClassName={styles.active}
+          >
             New Question
-          </Link>
+          </NavLink>
         </li>
         <li className={styles.item}>
-          <Link className={styles.link} to="/new">
+          <NavLink
+            className={styles.link}
+            to="/leaderboard"
+            activeClassName={styles.active}
+          >
             Leader Board
-          </Link>
+          </NavLink>
         </li>
         <li className={clsx(styles.item, styles["right-item"])}>
-          <a href="#home" className={styles.link}>
+          <a href="#logout" className={styles.link} onClick={handleLogout}>
             Logout
           </a>
         </li>
