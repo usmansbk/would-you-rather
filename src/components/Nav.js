@@ -2,17 +2,6 @@ import { NavLink as Link } from "react-router-dom";
 import clsx from "clsx";
 import styles from "../styles/nav.module.css";
 
-const navs = [
-  {
-    path: "/",
-    name: "Home",
-  },
-  {
-    path: "/new",
-    name: "New Question",
-  },
-];
-
 export default function Nav() {
   return (
     <nav>
