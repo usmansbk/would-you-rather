@@ -1,19 +1,15 @@
-.tabs {
-  list-style-type: none;
-  overflow: hidden;
-  background-color: white;
+.list {
+  list-style: none;
+  text-align: center;
+}
+
+.item {
   text-align: center;
   margin: 20px;
   padding: 0;
+  display: inline;
 }
 
-.tab {
-  margin: 16px;
-  text-align: center;
+.link {
   text-decoration: none;
-  background-color: #333;
-  color: white;
-}
-a:hover:not(.active) {
-  background-color: #111;
 }

@@ -1,32 +1,44 @@
+import { NavLink as Link } from "react-router-dom";
 import clsx from "clsx";
 import styles from "../styles/nav.module.css";
+
+const navs = [
+  {
+    path: "/",
+    name: "Home",
+  },
+  {
+    path: "/new",
+    name: "New Question",
+  },
+];
 
 export default function Nav() {
   return (
     <nav>
       <ul className={styles.list}>
         <li className={styles.item}>
-          <a href="#home" className={styles.text}>
+          <Link className={styles.link} activeClassName={styles.active} to="/">
             Home
-          </a>
+          </Link>
         </li>
         <li className={styles.item}>
-          <a href="#home" className={styles.text}>
+          <Link className={styles.link} to="/new">
             New Question
-          </a>
+          </Link>
         </li>
         <li className={styles.item}>
-          <a href="#home" className={styles.text}>
+          <Link className={styles.link} to="/new">
             Leader Board
-          </a>
+          </Link>
         </li>
         <li className={clsx(styles.item, styles["right-item"])}>
-          <a href="#home" className={styles.text}>
+          <a href="#home" className={styles.link}>
             Logout
           </a>
         </li>
         <li className={styles["right-item"]}>
-          <span className={styles.text}>Usman Suleiman</span>
+          <span className={styles.link}>Usman Suleiman</span>
         </li>
         <li className={styles["right-item"]}>
           <img
