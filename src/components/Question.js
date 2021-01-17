@@ -1,4 +1,3 @@
-import { queryByAltText } from "@testing-library/react";
 import clsx from "clsx";
 import styles from "../styles/question.module.css";
 import YourVote from "../assets/vote.png";
@@ -6,7 +5,7 @@ import YourVote from "../assets/vote.png";
 export default function Question() {
   return (
     <div className={styles.container}>
-      {/* <Unanswered /> */}
+      <Unanswered />
       <Answered />
     </div>
   );
