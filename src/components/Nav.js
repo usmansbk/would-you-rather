@@ -8,7 +8,7 @@ export default function Nav() {
     console.log("logout");
   };
   return (
-    <nav>
+    <nav className={styles.nav}>
       <ul className={styles.list}>
         <li className={styles.item}>
           <NavLink

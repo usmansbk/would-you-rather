@@ -2,6 +2,8 @@ html,
 body,
 #root,
 #root > div {
+  margin: 0;
+  padding: 0;
   height: 98vh;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }

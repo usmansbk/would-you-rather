@@ -1,7 +1,8 @@
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Login from "./Login";
 import Nav from "./Nav";
 import Home from "./Home";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import FoF from "./FOF";
 
 function App() {
   return (
@@ -13,6 +14,9 @@ function App() {
         </Route>
         <Route path="/login">
           <Login />
+        </Route>
+        <Route path="*">
+          <FoF />
         </Route>
       </Switch>
     </BrowserRouter>

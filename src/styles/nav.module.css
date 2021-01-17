@@ -1,3 +1,10 @@
+.nav {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
 .list {
   list-style-type: none;
   margin: 0;

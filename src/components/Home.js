@@ -2,7 +2,7 @@ import styles from "../styles/home.module.css";
 
 export default function Home() {
   return (
-    <div>
+    <div className={styles.container}>
       <nav>
         <ul className={styles.list}>
           <li className={styles.item}>
