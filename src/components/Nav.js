@@ -3,10 +3,6 @@ import clsx from "clsx";
 import styles from "../styles/nav.module.css";
 
 export default function Nav() {
-  const handleLogout = (e) => {
-    e.preventDefault();
-    console.log("logout");
-  };
   return (
     <nav className={styles.nav}>
       <ul className={styles.list}>
