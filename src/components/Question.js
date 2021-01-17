@@ -14,11 +14,15 @@ export default function Question() {
         <form>
           <div className={styles.radio}>
             <input type="radio" id="questionOne" value="optionOne" />
-            <label htmlFor="questionOne">be a front-end developer</label>
+            <label className={styles.label} htmlFor="questionOne">
+              be a front-end developer
+            </label>
           </div>
           <div className={styles.radio}>
             <input type="radio" id="questionTwo" value="optionTwo" />
-            <label htmlFor="questionTwo">be a back-end developer</label>
+            <label className={styles.label} htmlFor="questionTwo">
+              be a back-end developer
+            </label>
           </div>
         </form>
         <input type="button" value="Submit" className={styles.btn} />
