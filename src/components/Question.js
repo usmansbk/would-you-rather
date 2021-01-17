@@ -13,7 +13,7 @@ export default function Question() {
 
 function Unanswered({ onAnswer }) {
   return (
-    <div className={styles.content}>
+    <>
       <h4>Tyler McGinnis asks:</h4>
       <img
         src={"https://i.pravatar.cc/300"}
@@ -41,7 +41,7 @@ function Unanswered({ onAnswer }) {
         className={styles.btn}
         onClick={onAnswer}
       />
-    </div>
+    </>
   );
 }
 
