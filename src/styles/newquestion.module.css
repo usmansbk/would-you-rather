@@ -1,10 +1,10 @@
 .container {
-  height: 100vh;
+  height: 98vh;
   width: 100%;
 }
 
 .content {
-  margin-top: 60px;
+  padding-top: 60px;
   display: flex;
   justify-self: center;
   align-items: center;

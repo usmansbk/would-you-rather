@@ -1,16 +1,21 @@
 import clsx from "clsx";
+import { useState } from "react";
 import styles from "../styles/question.module.css";
 
 export default function Question() {
+  const [isAnswered, setAnswered] = useState(false);
   return (
     <div className={styles.container}>
-      <Unanswered />
-      <Answered />
+      {isAnswered ? (
+        <Answered />
+      ) : (
+        <Unanswered onAnswer={() => setAnswered(true)} />
+      )}
     </div>
   );
 }
 
-function Unanswered() {
+function Unanswered({ onAnswer }) {
   return (
     <div className={styles.content}>
       <h4>Tyler McGinnis asks:</h4>
@@ -34,7 +39,12 @@ function Unanswered() {
           </label>
         </div>
       </form>
-      <input type="button" value="Submit" className={styles.btn} />
+      <input
+        type="button"
+        value="Submit"
+        className={styles.btn}
+        onClick={onAnswer}
+      />
     </div>
   );
 }
