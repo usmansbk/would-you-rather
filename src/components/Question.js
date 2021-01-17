@@ -1,6 +1,5 @@
 import clsx from "clsx";
 import styles from "../styles/question.module.css";
-import YourVote from "../assets/vote.png";
 
 export default function Question() {
   return (
@@ -70,12 +69,10 @@ function Answered() {
 function QuestionBox({ voted, percent, count, question }) {
   return (
     <div className={clsx(styles.box, voted && styles.voted)}>
+      {voted && <small>Your vote</small>}
       <h2>{percent}</h2>
       <span className={styles.count}>{count}</span>
       <p className={styles.question}>{question}</p>
-      {voted && (
-        <img src={YourVote} alt="Your vote" className={styles.yourVote} />
-      )}
     </div>
   );
 }
