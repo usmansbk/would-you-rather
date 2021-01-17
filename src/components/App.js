@@ -5,6 +5,7 @@ import Home from "./Home";
 import FoF from "./FOF";
 import Question from "./Question";
 import NewQuestion from "./NewQuestion";
+import LeaderBoard from "./LeaderBoard";
 import styles from "../styles/app.module.css";
 
 function App() {
@@ -25,6 +26,9 @@ function App() {
             </Route>
             <Route path="/add">
               <NewQuestion />
+            </Route>
+            <Route path="/leaderboard">
+              <LeaderBoard />
             </Route>
             <Route path="*">
               <FoF />

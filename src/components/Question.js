@@ -62,6 +62,9 @@ function Answered() {
           question="find $50 yourself?"
           voted
         />
+        <div className={styles.or}>
+          <h3>OR</h3>
+        </div>
         <QuestionBox
           percent="33.3%"
           count="1 out of 3"
