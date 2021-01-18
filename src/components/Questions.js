@@ -1,39 +1,41 @@
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 import styles from "../styles/questions.module.css";
 
-export default function Questions() {
+export default function Questions({ questionIds = [] }) {
   return (
     <div>
-      <Link to="/questions/1" className={styles.link}>
-        <Question />
-      </Link>
-      <Link to="/questions/1" className={styles.link}>
-        <Question />
-      </Link>
-      <Link to="/questions/1" className={styles.link}>
-        <Question />
-      </Link>
+      {questionIds.map((id) => (
+        <Link key={id} to={`/questions/${id}`} className={styles.link}>
+          <Question id={id} />
+        </Link>
+      ))}
     </div>
   );
 }
 
-function Question() {
+function Question({ id }) {
+  const { question, user } = useSelector(({ users, questions }) => {
+    const question = questions[id];
+    const user = users[question.author];
+    return {
+      question,
+      user,
+    };
+  });
+
   return (
     <div className={styles.card}>
       <div>
-        <h4>Sarah Edo asks:</h4>
+        <h4>{user.name} asks:</h4>
       </div>
       <div className={styles.itemContent}>
-        <img
-          src={"https://i.pravatar.cc/300"}
-          alt={"Sarah"}
-          className={styles.avatar}
-        />
+        <img src={user.avatarURL} alt={user.name} className={styles.avatar} />
         <div className={styles.right}>
           <h4>Would you rather</h4>
-          <p>find $50 yourself</p>
+          <p>{question.optionOne.text}</p>
           <small className={styles.or}>Or</small>
-          <p>have your best friend find $500</p>
+          <p>{question.optionTwo.text}</p>
         </div>
       </div>
     </div>
