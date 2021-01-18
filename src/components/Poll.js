@@ -37,7 +37,6 @@ function Unanswered({ by, question, authedUser }) {
   const dispatch = useDispatch();
   const [value, setValue] = useState(null);
   const onSubmit = () => {
-    console.log("submit");
     dispatch(
       handleAnswerQuestion({
         qid: question.id,

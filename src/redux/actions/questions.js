@@ -11,10 +11,11 @@ export function receiveQuestions(questions) {
   };
 }
 
-function removeQuestionAnswer({ id }) {
+function removeQuestionAnswer({ id, authedUser }) {
   return {
     type: REMOVE_USER_VOTE,
     id,
+    authedUser,
   };
 }
 
@@ -35,7 +36,7 @@ export function handleAnswerQuestion(info) {
       return saveQuestionAnswer(info);
     } catch (e) {
       console.warn("Error in handleAnswerQuestion");
-      dispatch(removeQuestionAnswer(info.id));
+      dispatch(removeQuestionAnswer(info));
       alert("There was an error saving answer. Try again.");
     }
   };
