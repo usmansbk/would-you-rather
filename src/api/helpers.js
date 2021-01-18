@@ -10,6 +10,6 @@ export function formatOption(question, value) {
     count,
     text: option.text,
     total,
-    percent: percent.toFixed(1),
+    percent: `${percent.toFixed(1)}%`,
   };
 }
