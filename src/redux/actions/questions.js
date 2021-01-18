@@ -5,7 +5,6 @@ export const RECIEVE_QUESTIONS = "questions/receive_tweets";
 export const SAVE_USER_VOTE = "questions/save_vote";
 export const REMOVE_USER_VOTE = "questions/remove_vote";
 export const ADD_QUESTION = "questions/add";
-export const SET_FILTER = "question/filter_by";
 
 function addQuestion(question) {
   return {

@@ -1,32 +1,33 @@
 import clsx from "clsx";
-import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Questions from "./Questions";
 import styles from "../styles/home.module.css";
-
-const ANSWERED = "answered";
-const UNANSWERED = "unanswered";
+import { setFilter, ANSWERED, UNANSWERED } from "../redux/actions/shared";
 
 export default function Home() {
-  const [filter, setFilter] = useState(UNANSWERED);
-
-  const questionIds = useSelector(({ questions, users, authedUser }) => {
-    const user = users[authedUser];
-    return Object.keys(questions)
-      .filter((id) => {
-        const answerIds = Object.keys(user.answers);
-        if (filter === ANSWERED) {
-          return answerIds.includes(id);
-        } else {
-          return !answerIds.includes(id);
-        }
-      })
-      .sort((a, b) => questions[b].timestamp - questions[a].timestamp);
-  });
+  const dispatch = useDispatch();
+  const [questionIds, filter] = useSelector(
+    ({ questions, users, authedUser, appState }) => {
+      const user = users[authedUser];
+      return [
+        Object.keys(questions)
+          .filter((id) => {
+            const answerIds = Object.keys(user.answers);
+            if (appState.filter === ANSWERED) {
+              return answerIds.includes(id);
+            } else {
+              return !answerIds.includes(id);
+            }
+          })
+          .sort((a, b) => questions[b].timestamp - questions[a].timestamp),
+        appState.filter,
+      ];
+    }
+  );
 
   const changeFilter = (e, value) => {
     e.preventDefault();
-    setFilter(value);
+    dispatch(setFilter(value));
   };
 
   return (
