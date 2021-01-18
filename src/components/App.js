@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import LoadingBar from "react-redux-loading";
 import Login from "./Login";
 import Nav from "./Nav";
 import Home from "./Home";
@@ -13,10 +14,15 @@ import { handleInitialData } from "../redux/actions/shared";
 
 function App() {
   const dispatch = useDispatch();
+  const loading = useSelector((state) => state.loadingBar.default);
 
   useEffect(() => {
     dispatch(handleInitialData());
   }, [dispatch]);
+
+  if (loading) {
+    return <LoadingBar />;
+  }
 
   return (
     <div className={styles.container}>
