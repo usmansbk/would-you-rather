@@ -33,3 +33,7 @@
   text-decoration: none;
   color: inherit;
 }
+
+.empty {
+  text-align: center;
+}

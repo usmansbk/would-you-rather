@@ -5,11 +5,15 @@ import styles from "../styles/questions.module.css";
 export default function Questions({ questionIds = [] }) {
   return (
     <div>
-      {questionIds.map((id) => (
-        <Link key={id} to={`/questions/${id}`} className={styles.link}>
-          <Question id={id} />
-        </Link>
-      ))}
+      {!questionIds.length ? (
+        <p className={styles.empty}>No questions yet</p>
+      ) : (
+        questionIds.map((id) => (
+          <Link key={id} to={`/questions/${id}`} className={styles.link}>
+            <Question id={id} />
+          </Link>
+        ))
+      )}
     </div>
   );
 }
