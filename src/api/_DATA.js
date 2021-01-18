@@ -24,8 +24,7 @@ let users = {
   johndoe: {
     id: "johndoe",
     name: "John Doe",
-    avatarURL:
-      "https://images-na.ssl-images-amazon.com/images/M/MV5BMTI4NTczNTMzN15BMl5BanBnXkFtZTYwNjYwMzU0._V1_UY256_CR0,0,172,256_AL_.jpg",
+    avatarURL: "https://uifaces.co/our-content/donated/n4Ngwvi7.jpg",
     answers: {
       xj352vofupe1dqz9emx13r: "optionOne",
       vthrdm985a262al8qx3do: "optionTwo",
