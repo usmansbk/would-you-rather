@@ -20,37 +20,37 @@ function App() {
     dispatch(handleInitialData());
   }, [dispatch]);
 
-  if (loading) {
-    return <LoadingBar />;
-  }
-
   return (
     <div className={styles.container}>
-      <div className={styles.content}>
-        <BrowserRouter>
-          <Nav />
-          <Switch>
-            <PrivateRoute path="/" exact>
-              <Home />
-            </PrivateRoute>
-            <Route path="/login">
-              <Login />
-            </Route>
-            <PrivateRoute path="/questions/:question_id">
-              <Poll />
-            </PrivateRoute>
-            <PrivateRoute path="/add">
-              <NewQuestion />
-            </PrivateRoute>
-            <PrivateRoute path="/leaderboard">
-              <LeaderBoard />
-            </PrivateRoute>
-            <PrivateRoute path="*">
-              <FoF />
-            </PrivateRoute>
-          </Switch>
-        </BrowserRouter>
-      </div>
+      {loading ? (
+        <LoadingBar />
+      ) : (
+        <div className={styles.content}>
+          <BrowserRouter>
+            <Nav />
+            <Switch>
+              <PrivateRoute path="/" exact>
+                <Home />
+              </PrivateRoute>
+              <Route path="/login">
+                <Login />
+              </Route>
+              <PrivateRoute path="/questions/:question_id">
+                <Poll />
+              </PrivateRoute>
+              <PrivateRoute path="/add">
+                <NewQuestion />
+              </PrivateRoute>
+              <PrivateRoute path="/leaderboard">
+                <LeaderBoard />
+              </PrivateRoute>
+              <PrivateRoute path="*">
+                <FoF />
+              </PrivateRoute>
+            </Switch>
+          </BrowserRouter>
+        </div>
+      )}
     </div>
   );
 }
