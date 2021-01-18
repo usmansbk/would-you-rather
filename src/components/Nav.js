@@ -1,10 +1,16 @@
+import clsx from "clsx";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
-import clsx from "clsx";
+import { useDispatch } from "react-redux";
+import { logout } from "../redux/actions/authedUser";
 import styles from "../styles/nav.module.css";
 
 export default function Nav() {
+  const dispatch = useDispatch();
   const user = useSelector(({ users, authedUser }) => users[authedUser]);
+  const handleLogout = () => {
+    dispatch(logout());
+  };
 
   return (
     <nav className={styles.nav}>
@@ -40,9 +46,9 @@ export default function Nav() {
         {!!user && (
           <>
             <li className={clsx(styles.item, styles["right-item"])}>
-              <NavLink href="#logout" className={styles.link} to="/login">
+              <a href="#logout" className={styles.link} onClick={handleLogout}>
                 Logout
-              </NavLink>
+              </a>
             </li>
             <li className={styles["right-item"]}>
               <span className={styles.link}>{user.name}</span>
