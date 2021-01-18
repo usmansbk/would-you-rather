@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import FOF from "./FOF";
 import styles from "../styles/question.module.css";
 import { formatOption } from "../api/helpers";
 
@@ -13,6 +14,10 @@ export default function Question() {
       authedUser: users[authedUser],
     })
   );
+
+  if (!question) {
+    return <FOF />;
+  }
 
   const isAnswered = Object.keys(authedUser.answers).includes(id);
   const Component = isAnswered ? Answered : Unanswered;
