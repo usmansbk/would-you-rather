@@ -4,6 +4,9 @@ export default function Leaderboard() {
   return (
     <>
       <User />
+      <User />
+      <User />
+      <User />
     </>
   );
 }
