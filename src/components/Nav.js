@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import LoadingBar from "react-redux-loading";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
@@ -14,6 +15,7 @@ export default function Nav() {
 
   return (
     <nav className={styles.nav}>
+      <LoadingBar />
       <ul className={styles.list}>
         <li className={styles.item}>
           <NavLink

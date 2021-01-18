@@ -1,7 +1,6 @@
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import LoadingBar from "react-redux-loading";
 import Login from "./Login";
 import Nav from "./Nav";
 import Home from "./Home";
@@ -14,7 +13,6 @@ import { handleInitialData } from "../redux/actions/shared";
 
 function App() {
   const dispatch = useDispatch();
-  const loading = useSelector((state) => state.loadingBar.default);
 
   useEffect(() => {
     dispatch(handleInitialData());
@@ -22,35 +20,31 @@ function App() {
 
   return (
     <div className={styles.container}>
-      {loading ? (
-        <LoadingBar />
-      ) : (
-        <div className={styles.content}>
-          <BrowserRouter>
-            <Nav />
-            <Switch>
-              <PrivateRoute path="/" exact>
-                <Home />
-              </PrivateRoute>
-              <Route path="/login">
-                <Login />
-              </Route>
-              <PrivateRoute path="/questions/:question_id">
-                <Poll />
-              </PrivateRoute>
-              <PrivateRoute path="/add">
-                <NewQuestion />
-              </PrivateRoute>
-              <PrivateRoute path="/leaderboard">
-                <LeaderBoard />
-              </PrivateRoute>
-              <PrivateRoute path="*">
-                <FoF />
-              </PrivateRoute>
-            </Switch>
-          </BrowserRouter>
-        </div>
-      )}
+      <div className={styles.content}>
+        <BrowserRouter>
+          <Nav />
+          <Switch>
+            <PrivateRoute path="/" exact>
+              <Home />
+            </PrivateRoute>
+            <Route path="/login">
+              <Login />
+            </Route>
+            <PrivateRoute path="/questions/:question_id">
+              <Poll />
+            </PrivateRoute>
+            <PrivateRoute path="/add">
+              <NewQuestion />
+            </PrivateRoute>
+            <PrivateRoute path="/leaderboard">
+              <LeaderBoard />
+            </PrivateRoute>
+            <PrivateRoute path="*">
+              <FoF />
+            </PrivateRoute>
+          </Switch>
+        </BrowserRouter>
+      </div>
     </div>
   );
 }

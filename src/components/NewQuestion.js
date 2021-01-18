@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { Redirect } from "react-router-dom";
 import { handleAddQuestion } from "../redux/actions/questions";
 import styles from "../styles/newquestion.module.css";
 
@@ -8,6 +9,7 @@ export default function NewQuestion() {
 
   const [optionOne, setOptionOne] = useState("");
   const [optionTwo, setOptionTwo] = useState("");
+  const [toHome, setToHome] = useState(false);
 
   const onChangeOptionOne = (e) => setOptionOne(e.target.value);
   const onChangeOptionTwo = (e) => setOptionTwo(e.target.value);
@@ -21,9 +23,14 @@ export default function NewQuestion() {
       })
     );
 
+    setToHome(true);
     setOptionOne("");
     setOptionTwo("");
   };
+
+  if (toHome) {
+    return <Redirect to="/" />;
+  }
 
   return (
     <>
