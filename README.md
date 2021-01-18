@@ -116,6 +116,11 @@ npm install
 npm start
 ```
 
+## Attributions
+
+- User avatars were gotten from [UIFaces](https://uifaces.co/)
+- Learn CSS on [w3Schools](https://www.w3schools.com/html/)
+
 ## Contributing
 
 This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests. For details, check out [CONTRIBUTING.md](https://github.com/udacity/reactnd-project-would-you-rather-starter/blob/master/CONTRIBUTING.md).
