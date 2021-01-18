@@ -2,7 +2,7 @@ let users = {
   sarahedo: {
     id: "sarahedo",
     name: "Sarah Edo",
-    avatarURL: "https://i.pravatar.cc/300",
+    avatarURL: "https://randomuser.me/api/portraits/women/44.jpg",
     answers: {
       "8xf0y6ziyjabvozdd253nd": "optionOne",
       "6ni6ok3ym7mf1p33lnez": "optionTwo",
@@ -14,7 +14,7 @@ let users = {
   tylermcginnis: {
     id: "tylermcginnis",
     name: "Tyler McGinnis",
-    avatarURL: "https://i.pravatar.cc/300",
+    avatarURL: "https://uifaces.co/our-content/donated/Square__small_.jpg",
     answers: {
       vthrdm985a262al8qx3do: "optionOne",
       xj352vofupe1dqz9emx13r: "optionTwo",
@@ -24,7 +24,8 @@ let users = {
   johndoe: {
     id: "johndoe",
     name: "John Doe",
-    avatarURL: "https://i.pravatar.cc/300",
+    avatarURL:
+      "https://images-na.ssl-images-amazon.com/images/M/MV5BMTI4NTczNTMzN15BMl5BanBnXkFtZTYwNjYwMzU0._V1_UY256_CR0,0,172,256_AL_.jpg",
     answers: {
       xj352vofupe1dqz9emx13r: "optionOne",
       vthrdm985a262al8qx3do: "optionTwo",
