@@ -6,6 +6,7 @@ import FOF from "./FOF";
 import styles from "../styles/question.module.css";
 import { formatOption } from "../api/helpers";
 import { handleAnswerQuestion } from "../redux/actions/questions";
+import Voted from "../assets/voted.png";
 
 export default function Question() {
   const { question_id: id } = useParams();
@@ -113,7 +114,7 @@ function QuestionBox({ question, value, voted }) {
   const { percent, count, total, text } = formatOption(question, value);
   return (
     <div className={clsx(styles.box, voted && styles.voted)}>
-      {voted && <small>Your vote</small>}
+      {voted && <img src={Voted} alt="I voted" className={styles.votedImage} />}
       <h2>{percent}</h2>
       <span className={styles.count}>
         {count} of {total}
