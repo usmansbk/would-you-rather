@@ -19,7 +19,9 @@ export default function questions(state = {}, action) {
           [action.answer]: {
             ...state[action.id][action.answer],
             votes: [
-              ...state[action.id][action.answer].votes,
+              ...state[action.id][action.answer].votes.filter(
+                (user) => user !== action.authedUser
+              ),
               action.authedUser,
             ],
           },
@@ -33,7 +35,7 @@ export default function questions(state = {}, action) {
           [action.answer]: {
             ...state[action.id][action.answer],
             votes: state[action.id][action.answer].votes.filter(
-              (qid) => qid !== action.id
+              (user) => user !== action.authedUser
             ),
           },
         },

@@ -1,9 +1,11 @@
 import clsx from "clsx";
-import { useSelector } from "react-redux";
+import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import FOF from "./FOF";
 import styles from "../styles/question.module.css";
 import { formatOption } from "../api/helpers";
+import { handleAnswerQuestion } from "../redux/actions/questions";
 
 export default function Question() {
   const { question_id: id } = useParams();
@@ -31,7 +33,20 @@ export default function Question() {
   );
 }
 
-function Unanswered({ by, question }) {
+function Unanswered({ by, question, authedUser }) {
+  const dispatch = useDispatch();
+  const [value, setValue] = useState(null);
+  const onSubmit = () => {
+    console.log("submit");
+    dispatch(
+      handleAnswerQuestion({
+        qid: question.id,
+        answer: value,
+        authedUser: authedUser.id,
+      })
+    );
+  };
+
   return (
     <>
       <h4>{by.name} asks:</h4>
@@ -39,19 +54,33 @@ function Unanswered({ by, question }) {
       <h2>Would You Rather</h2>
       <form>
         <div className={styles.radio}>
-          <input type="radio" id="questionOne" value="optionOne" />
+          <input
+            type="radio"
+            checked={value === "optionOne"}
+            onChange={() => setValue("optionOne")}
+          />
           <label className={styles.label} htmlFor="questionOne">
             {question.optionOne.text}
           </label>
         </div>
         <div className={styles.radio}>
-          <input type="radio" id="questionTwo" value="optionTwo" />
+          <input
+            type="radio"
+            checked={value === "optionTwo"}
+            onChange={() => setValue("optionTwo")}
+          />
           <label className={styles.label} htmlFor="questionTwo">
             {question.optionTwo.text}
           </label>
         </div>
       </form>
-      <input type="button" value="Submit" className={styles.btn} />
+      <input
+        disabled={!value}
+        onClick={onSubmit}
+        type="button"
+        value="Submit"
+        className={styles.btn}
+      />
     </>
   );
 }
