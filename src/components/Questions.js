@@ -7,6 +7,12 @@ export default function Questions() {
       <Link to="/questions/1" className={styles.link}>
         <Question />
       </Link>
+      <Link to="/questions/1" className={styles.link}>
+        <Question />
+      </Link>
+      <Link to="/questions/1" className={styles.link}>
+        <Question />
+      </Link>
     </div>
   );
 }
