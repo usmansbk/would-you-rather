@@ -1,17 +1,14 @@
-export function formatQuestion(question) {
+export function formatOption(question, value) {
   const { optionOne, optionTwo } = question;
+  const option = question[value];
   const optionOneVoteCount = optionOne.votes.length;
   const optionTwoVoteCount = optionTwo.votes.length;
-  const totalVotes = optionOneVoteCount + optionTwoVoteCount;
-  const optionOnePercent = (optionOneVoteCount / totalVotes) * 100;
-  const optionTwoPercent = (optionTwoVoteCount / totalVotes) * 100;
+  const total = optionOneVoteCount + optionTwoVoteCount;
+  const percent = (optionTwoVoteCount / total) * 100;
   return {
-    optionOne: optionOne.text,
-    optionTwo: optionTwo.text,
-    optionOneVoteCount,
-    optionTwoVoteCount,
-    totalVotes,
-    optionOnePercent,
-    optionTwoPercent,
+    count: option?.votes.length,
+    text: option.text,
+    total,
+    percent,
   };
 }

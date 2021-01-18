@@ -2,7 +2,7 @@ import clsx from "clsx";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import styles from "../styles/question.module.css";
-import { formatQuestion } from "../api/helpers";
+import { formatOption } from "../api/helpers";
 
 export default function Question() {
   const { question_id: id } = useParams();
@@ -52,16 +52,6 @@ function Unanswered({ by, question }) {
 }
 
 function Answered({ question, by, voted }) {
-  const {
-    optionOnePercent,
-    optionOneVoteCount,
-    totalVotes,
-    optionOne,
-    optionTwo,
-    optionTwoPercent,
-    optionTwoVoteCount,
-  } = formatQuestion(question);
-
   return (
     <>
       <h4>Added by {by.name}</h4>
@@ -69,18 +59,16 @@ function Answered({ question, by, voted }) {
       <h4>Would you rather</h4>
       <div className={styles.row}>
         <QuestionBox
-          percent={optionOnePercent}
-          count={`${optionOneVoteCount} out of ${totalVotes}`}
-          question={optionOne}
+          question={question}
+          value="optionOne"
           voted={voted === "optionOne"}
         />
         <div className={styles.or}>
           <h3>OR</h3>
         </div>
         <QuestionBox
-          percent={optionTwoPercent}
-          count={`${optionTwoVoteCount} out of ${totalVotes}`}
-          question={optionTwo}
+          question={question}
+          value="optionTwo"
           voted={voted === "optionTwo"}
         />
       </div>
@@ -88,13 +76,16 @@ function Answered({ question, by, voted }) {
   );
 }
 
-function QuestionBox({ voted, percent, count, question }) {
+function QuestionBox({ question, value, voted }) {
+  const { percent, count, total, text } = formatOption(question, value);
   return (
     <div className={clsx(styles.box, voted && styles.voted)}>
       {voted && <small>Your vote</small>}
       <h2>{percent}</h2>
-      <span className={styles.count}>{count}</span>
-      <p className={styles.question}>{question}</p>
+      <span className={styles.count}>
+        {count} of {total}
+      </span>
+      <p className={styles.question}>{text}</p>
     </div>
   );
 }
