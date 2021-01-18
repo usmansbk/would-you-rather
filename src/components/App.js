@@ -1,4 +1,6 @@
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import Login from "./Login";
 import Nav from "./Nav";
 import Home from "./Home";
@@ -7,8 +9,6 @@ import Poll from "./Poll";
 import NewQuestion from "./NewQuestion";
 import LeaderBoard from "./LeaderBoard";
 import styles from "../styles/app.module.css";
-import { useEffect } from "react";
-import { useDispatch } from "react-redux";
 import { handleInitialData } from "../redux/actions/shared";
 
 function App() {
@@ -24,28 +24,50 @@ function App() {
         <BrowserRouter>
           <Nav />
           <Switch>
-            <Route path="/" exact>
+            <PrivateRoute path="/" exact>
               <Home />
-            </Route>
+            </PrivateRoute>
             <Route path="/login">
               <Login />
             </Route>
-            <Route path="/questions/:question_id">
+            <PrivateRoute path="/questions/:question_id">
               <Poll />
-            </Route>
-            <Route path="/add">
+            </PrivateRoute>
+            <PrivateRoute path="/add">
               <NewQuestion />
-            </Route>
-            <Route path="/leaderboard">
+            </PrivateRoute>
+            <PrivateRoute path="/leaderboard">
               <LeaderBoard />
-            </Route>
-            <Route path="*">
+            </PrivateRoute>
+            <PrivateRoute path="*">
               <FoF />
-            </Route>
+            </PrivateRoute>
           </Switch>
         </BrowserRouter>
       </div>
     </div>
+  );
+}
+
+function PrivateRoute({ children, ...rest }) {
+  const authedUser = useSelector(({ authedUser }) => authedUser);
+
+  return (
+    <Route
+      {...rest}
+      render={({ location }) =>
+        authedUser ? (
+          children
+        ) : (
+          <Redirect
+            to={{
+              pathname: "/login",
+              state: { from: location },
+            }}
+          />
+        )
+      }
+    />
   );
 }
 

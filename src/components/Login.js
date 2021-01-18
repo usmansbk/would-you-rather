@@ -1,11 +1,18 @@
+import { useSelector } from "react-redux";
+import { useHistory, useLocation } from "react-router-dom";
 import logo from "../assets/logo.png";
 import styles from "../styles/login.module.css";
-import { useState } from "react";
 
 export default function Login() {
-  const [options] = useState([]);
+  const location = useLocation();
+  const history = useHistory();
+  const users = useSelector((state) => state.users);
+
+  const { from } = location.state || { from: { pathname: "/" } };
+
   const onSubmit = (e) => {
     e.preventDefault();
+    history.replace(from);
   };
 
   return (
@@ -17,13 +24,18 @@ export default function Login() {
       <h2 className={styles.title}>Sign In</h2>
       <form onSubmit={onSubmit}>
         <select className={styles.select}>
-          {Object.keys(options).map((id) => (
+          {Object.keys(users).map((id) => (
             <option value={id} key={id}>
-              {options[id].name}
+              {users[id].name}
             </option>
           ))}
         </select>
-        <input className={styles.btn} type="submit" value="Submit" />
+        <input
+          className={styles.btn}
+          type="submit"
+          value="Submit"
+          onSubmit={onSubmit}
+        />
       </form>
     </div>
   );
