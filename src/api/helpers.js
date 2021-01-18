@@ -5,11 +5,11 @@ export function formatOption(question, value) {
   const optionOneVoteCount = optionOne.votes.length;
   const optionTwoVoteCount = optionTwo.votes.length;
   const total = optionOneVoteCount + optionTwoVoteCount;
-  const percent = Math.round((count / total) * 100);
+  const percent = (count / total) * 100;
   return {
     count,
     text: option.text,
     total,
-    percent,
+    percent: percent.toFixed(1),
   };
 }
