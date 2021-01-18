@@ -7,8 +7,17 @@ import Poll from "./Poll";
 import NewQuestion from "./NewQuestion";
 import LeaderBoard from "./LeaderBoard";
 import styles from "../styles/app.module.css";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { handleInitialData } from "../redux/actions/shared";
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(handleInitialData());
+  }, [dispatch]);
+
   return (
     <div className={styles.container}>
       <div className={styles.content}>
